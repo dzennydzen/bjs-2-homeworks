@@ -16,14 +16,13 @@ function solveEquation(a, b, c) {
 }
 
 function calculateTotalMortgage(percent, contribution, amount, countMonths) {
-  // const monthlyPercent = percent / 100 / 12;
-  //   const body = amount - contribution;
-  //   const month = body * (monthlyPercent + (monthlyPercent / (((1 + monthlyPercent)**countMonths) - 1)));
-  //   const res = contribution + (month * countMonths);
-  //   return Number(res.toFixed(2));
-  const monthlyPercent = (percent / 100) / 12;
-  const loanBody = amount - contribution;
-  const monthlyPayment = loanBody * (monthlyPercent + (monthlyPercent / ((1 + monthlyPercent) ** countMonths - 1)));
-  const totalAmount = contribution + monthlyPayment * countMonths;
-  return Math.round(totalAmount * 100) / 100;
+  if (amount === contribution) {
+    return 0;
+  }
+  
+    const monthlyPercent = percent / 100 / 12;
+    const body = amount - contribution;
+    const month = body * (monthlyPercent + (monthlyPercent / (((1 + monthlyPercent)**countMonths) - 1)));
+    const res = contribution + (month * countMonths);
+    return Number(res.toFixed(2));
 }
