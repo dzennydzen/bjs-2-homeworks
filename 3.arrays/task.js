@@ -3,7 +3,7 @@ function compareArrays(arr1, arr2) {
         return false;
       }
       
-      return arr1.every((num, index) => num === arr2[index]);
+    return arr1.every((num, index) => num === arr2[index]);
 }
 
 function getUsersNamesInAgeRange(users, gender) {
